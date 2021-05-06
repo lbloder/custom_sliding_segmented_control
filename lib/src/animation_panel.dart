@@ -11,6 +11,7 @@ class AnimationPanel<T> extends StatelessWidget {
     this.radius,
     this.color,
     this.curve,
+    this.decoration,
   }) : super(key: key);
 
   final double offset;
@@ -21,6 +22,7 @@ class AnimationPanel<T> extends StatelessWidget {
   final Duration? duration;
   final Color? color;
   final Curve? curve;
+  final BoxDecoration? decoration;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,7 @@ class AnimationPanel<T> extends StatelessWidget {
         clipBehavior: Clip.antiAlias,
         color: color!,
         borderRadius: BorderRadius.circular(radius!),
-        child: Container(height: height),
+        child: Container(decoration: decoration, height: height),
       ),
     );
   }

@@ -21,9 +21,11 @@ class CustomSlidingSegmentedControl<T> extends StatefulWidget {
     this.padding = 12,
     this.fixedWidth,
     this.decoration,
+    this.thumbDecoration,
   })  : assert(children.length != 0),
         super(key: key);
   final BoxDecoration? decoration;
+  final BoxDecoration? thumbDecoration;
   final ValueChanged<T>? onValueChanged;
   final Duration? duration;
   final double radius;
@@ -123,6 +125,7 @@ class _CustomSlidingSegmentedControlState<T>
                     radius: widget.radius,
                     elevation: widget.elevation,
                     color: widget.thumbColor,
+                    decoration: widget.thumbDecoration,
                     curve: widget.curve,
                   ),
                   Row(

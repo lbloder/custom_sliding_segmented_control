@@ -198,6 +198,30 @@ class _MyHomePageState extends State<MyHomePage> {
                 print(v);
               },
             ),
+            const SizedBox(height: 20),
+            CustomSlidingSegmentedControl<SegmentType>(
+              elevation: 2,
+              children: {
+                SegmentType.news: Text('Новости'),
+                SegmentType.map: Text('Карты'),
+                SegmentType.paper: Text('Список'),
+              },
+              radius: 8,
+              thumbDecoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment(0.7, 0.0),
+                  colors: [
+                    const Color(0xffee0000),
+                    const Color(0xffeeee00)
+                  ], // red to yellow
+                ),
+              ),
+              onValueChanged: (v) {
+                print(v);
+              },
+            ),
           ],
         ),
       ),
